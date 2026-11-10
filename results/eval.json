@@ -1,0 +1,399 @@
+{
+  "generated": "2026-11-10T14:51:02",
+  "python": "3.12.4",
+  "note": "SYNTHETIC tasks; deterministic reader (not an LLM); mock summarizer; regex token count",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "steps_per_task": 200,
+  "rows": [
+    {
+      "strategy": "full",
+      "budget": null,
+      "accuracy": 1.0,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 1.0,
+        "updated": 1.0
+      },
+      "mean_context_tokens_per_step": 11378.4,
+      "mean_tokens_per_question": 12731.7,
+      "questions": 960,
+      "compactions": 0,
+      "answers_with_provenance": 960,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "drop_oldest",
+      "budget": 1000,
+      "accuracy": 0.1375,
+      "stale_rate": 0.0,
+      "missing_rate": 0.8625,
+      "accuracy_by_kind": {
+        "constraint": 0.0,
+        "static": 0.1395,
+        "updated": 0.1836
+      },
+      "mean_context_tokens_per_step": 941.9,
+      "mean_tokens_per_question": 956.1,
+      "questions": 960,
+      "compactions": 4833,
+      "answers_with_provenance": 132,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "rolling_summary",
+      "budget": 1000,
+      "accuracy": 0.5365,
+      "stale_rate": 0.0,
+      "missing_rate": 0.4635,
+      "accuracy_by_kind": {
+        "constraint": 0.1812,
+        "static": 0.5757,
+        "updated": 0.6307
+      },
+      "mean_context_tokens_per_step": 701.7,
+      "mean_tokens_per_question": 697.6,
+      "questions": 960,
+      "compactions": 751,
+      "answers_with_provenance": 515,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "retrieval",
+      "budget": 1000,
+      "accuracy": 0.7333,
+      "stale_rate": 0.1073,
+      "missing_rate": 0.1594,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.7092,
+        "updated": 0.6587
+      },
+      "mean_context_tokens_per_step": 941.9,
+      "mean_tokens_per_question": 1025.2,
+      "questions": 960,
+      "compactions": 4833,
+      "answers_with_provenance": 704,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "drop_oldest+policy",
+      "budget": 1000,
+      "accuracy": 0.5021,
+      "stale_rate": 0.0,
+      "missing_rate": 0.4979,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.4125,
+        "updated": 0.3952
+      },
+      "mean_context_tokens_per_step": 895.0,
+      "mean_tokens_per_question": 933.4,
+      "questions": 960,
+      "compactions": 1022,
+      "answers_with_provenance": 482,
+      "forgotten_by_reason": {
+        "superseded": 262,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "rolling_summary+policy",
+      "budget": 1000,
+      "accuracy": 0.724,
+      "stale_rate": 0.0,
+      "missing_rate": 0.276,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.6499,
+        "updated": 0.6825
+      },
+      "mean_context_tokens_per_step": 757.3,
+      "mean_tokens_per_question": 791.7,
+      "questions": 960,
+      "compactions": 221,
+      "answers_with_provenance": 695,
+      "forgotten_by_reason": {
+        "superseded": 141,
+        "ttl_expired": 6534
+      }
+    },
+    {
+      "strategy": "retrieval+policy",
+      "budget": 1000,
+      "accuracy": 0.9802,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0198,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.9852,
+        "updated": 0.9698
+      },
+      "mean_context_tokens_per_step": 895.0,
+      "mean_tokens_per_question": 1070.5,
+      "questions": 960,
+      "compactions": 1022,
+      "answers_with_provenance": 941,
+      "forgotten_by_reason": {
+        "superseded": 560,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "drop_oldest",
+      "budget": 2000,
+      "accuracy": 0.2427,
+      "stale_rate": 0.0,
+      "missing_rate": 0.7573,
+      "accuracy_by_kind": {
+        "constraint": 0.0,
+        "static": 0.273,
+        "updated": 0.3045
+      },
+      "mean_context_tokens_per_step": 1882.3,
+      "mean_tokens_per_question": 1958.0,
+      "questions": 960,
+      "compactions": 4648,
+      "answers_with_provenance": 233,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "rolling_summary",
+      "budget": 2000,
+      "accuracy": 0.7958,
+      "stale_rate": 0.0,
+      "missing_rate": 0.2042,
+      "accuracy_by_kind": {
+        "constraint": 0.5062,
+        "static": 0.8487,
+        "updated": 0.8575
+      },
+      "mean_context_tokens_per_step": 1433.3,
+      "mean_tokens_per_question": 1508.1,
+      "questions": 960,
+      "compactions": 402,
+      "answers_with_provenance": 764,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "retrieval",
+      "budget": 2000,
+      "accuracy": 0.774,
+      "stale_rate": 0.0938,
+      "missing_rate": 0.1323,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.7685,
+        "updated": 0.6998
+      },
+      "mean_context_tokens_per_step": 1882.3,
+      "mean_tokens_per_question": 2027.2,
+      "questions": 960,
+      "compactions": 4648,
+      "answers_with_provenance": 743,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "drop_oldest+policy",
+      "budget": 2000,
+      "accuracy": 0.7969,
+      "stale_rate": 0.0,
+      "missing_rate": 0.2031,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.7507,
+        "updated": 0.7603
+      },
+      "mean_context_tokens_per_step": 1650.8,
+      "mean_tokens_per_question": 1749.8,
+      "questions": 960,
+      "compactions": 601,
+      "answers_with_provenance": 765,
+      "forgotten_by_reason": {
+        "superseded": 433,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "rolling_summary+policy",
+      "budget": 2000,
+      "accuracy": 0.9479,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0521,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.9377,
+        "updated": 0.9374
+      },
+      "mean_context_tokens_per_step": 1388.4,
+      "mean_tokens_per_question": 1460.4,
+      "questions": 960,
+      "compactions": 71,
+      "answers_with_provenance": 910,
+      "forgotten_by_reason": {
+        "superseded": 308,
+        "ttl_expired": 7074
+      }
+    },
+    {
+      "strategy": "retrieval+policy",
+      "budget": 2000,
+      "accuracy": 0.9958,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0042,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.997,
+        "updated": 0.9935
+      },
+      "mean_context_tokens_per_step": 1650.8,
+      "mean_tokens_per_question": 1868.7,
+      "questions": 960,
+      "compactions": 601,
+      "answers_with_provenance": 956,
+      "forgotten_by_reason": {
+        "superseded": 560,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "drop_oldest",
+      "budget": 4000,
+      "accuracy": 0.4281,
+      "stale_rate": 0.0,
+      "missing_rate": 0.5719,
+      "accuracy_by_kind": {
+        "constraint": 0.125,
+        "static": 0.4926,
+        "updated": 0.486
+      },
+      "mean_context_tokens_per_step": 3632.0,
+      "mean_tokens_per_question": 3824.1,
+      "questions": 960,
+      "compactions": 4151,
+      "answers_with_provenance": 411,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "rolling_summary",
+      "budget": 4000,
+      "accuracy": 0.9385,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0615,
+      "accuracy_by_kind": {
+        "constraint": 0.9375,
+        "static": 0.9318,
+        "updated": 0.9438
+      },
+      "mean_context_tokens_per_step": 2820.0,
+      "mean_tokens_per_question": 2994.1,
+      "questions": 960,
+      "compactions": 199,
+      "answers_with_provenance": 901,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "retrieval",
+      "budget": 4000,
+      "accuracy": 0.8354,
+      "stale_rate": 0.0719,
+      "missing_rate": 0.0927,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.8398,
+        "updated": 0.7754
+      },
+      "mean_context_tokens_per_step": 3632.0,
+      "mean_tokens_per_question": 3885.0,
+      "questions": 960,
+      "compactions": 4151,
+      "answers_with_provenance": 802,
+      "forgotten_by_reason": {}
+    },
+    {
+      "strategy": "drop_oldest+policy",
+      "budget": 4000,
+      "accuracy": 0.9969,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0031,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 0.9941,
+        "updated": 0.9978
+      },
+      "mean_context_tokens_per_step": 2327.0,
+      "mean_tokens_per_question": 2541.4,
+      "questions": 960,
+      "compactions": 23,
+      "answers_with_provenance": 957,
+      "forgotten_by_reason": {
+        "superseded": 559,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "rolling_summary+policy",
+      "budget": 4000,
+      "accuracy": 1.0,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 1.0,
+        "updated": 1.0
+      },
+      "mean_context_tokens_per_step": 2280.3,
+      "mean_tokens_per_question": 2473.6,
+      "questions": 960,
+      "compactions": 8,
+      "answers_with_provenance": 960,
+      "forgotten_by_reason": {
+        "superseded": 545,
+        "ttl_expired": 7090
+      }
+    },
+    {
+      "strategy": "retrieval+policy",
+      "budget": 4000,
+      "accuracy": 1.0,
+      "stale_rate": 0.0,
+      "missing_rate": 0.0,
+      "accuracy_by_kind": {
+        "constraint": 1.0,
+        "static": 1.0,
+        "updated": 1.0
+      },
+      "mean_context_tokens_per_step": 2327.0,
+      "mean_tokens_per_question": 2548.7,
+      "questions": 960,
+      "compactions": 23,
+      "answers_with_provenance": 960,
+      "forgotten_by_reason": {
+        "superseded": 560,
+        "ttl_expired": 7090
+      }
+    }
+  ]
+}
